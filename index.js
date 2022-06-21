@@ -170,6 +170,7 @@ window.addEventListener("keydown", function (e) {
       break;
     case " ":
       player.attack();
+      break;
 
     case "ArrowRight":
       keys.ArrowRight.pressed = true;
@@ -205,11 +206,9 @@ window.addEventListener("keyup", function (e) {
 
     case "ArrowRight":
       keys.ArrowRight.pressed = false;
-      enemy.lastKey = "ArrowRight";
       break;
     case "ArrowLeft":
       keys.ArrowLeft.pressed = false;
-      enemy.lastKey = "ArrowLeft";
       break;
     case "ArrowUp":
       keys.ArrowUp.pressed = false;
