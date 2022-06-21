@@ -21,7 +21,7 @@ class Sprite {
       height: 50,
     };
     this.color = color;
-    this.isAttacking = false;
+    this.isAttacking;
   }
 
   draw() {
@@ -131,19 +131,19 @@ function animate() {
   }
 
   enemy.velocity.x = 0;
-  if (keys.ArrowLeft.pressed && lastKey === "ArrowLeft") {
+  if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -5;
-  } else if (keys.ArrowRight.pressed && lastKey === "ArrowRight") {
+  } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 5;
   }
 
   // Colision detection
   if (
     player.attackBox.position.x + player.attackBox.width >= enemy.position.x &&
-    player.attackBox.position.x <= enemy.position.x + enemy.attackBox.width &&
+    player.attackBox.position.x <= enemy.position.x + enemy.width &&
     player.attackBox.position.y + player.attackBox.height >= enemy.position.y &&
     player.attackBox.position.y <= enemy.position.y + enemy.height &&
-    player.isAttacking === true
+    player.isAttacking
   ) {
     player.isAttacking = false;
     enemy.color = "green";
